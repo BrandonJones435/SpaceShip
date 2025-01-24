@@ -74,7 +74,7 @@ public class GridMonitor implements GridMonitorInterface {
     }
 
     /**
-     * Returns a copy of the delta grid (50% of the surrounding average).
+     * Returns a copy of the delta grid.
      */
     @Override
     public double[][] getDeltaGrid() {
@@ -93,11 +93,7 @@ public class GridMonitor implements GridMonitorInterface {
         }
         return copy;
     }
-
-    /**
-     * A well-formatted, clearly labeled String with useful information
-     * about the GridMonitor. We print out each of our grids here.
-     */
+    // Override toString() to print out the grid in a readable format. 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -120,11 +116,6 @@ public class GridMonitor implements GridMonitorInterface {
 
         return sb.toString();
     }
-
-    /* ----------------------------------------------------------------------
-       Below are all helper methods used by the constructor to fill the grids.
-       ---------------------------------------------------------------------- */
-
     /**
      * For each cell, compute the sum of its 4 neighbors:
      * up, down, left, right. For out-of-bounds neighbors, "mirror"
@@ -159,7 +150,7 @@ public class GridMonitor implements GridMonitorInterface {
     }
 
     /**
-     * The delta is 50% (half) of the surrounding average.
+     * The delta is 50% of the surrounding average.
      */
     private void computeDeltaGrid() {
         int rows = baseGrid.length;
@@ -189,12 +180,7 @@ public class GridMonitor implements GridMonitorInterface {
             }
         }
     }
-
-    /* ----------------------------------------------------------------------
-       Utility methods for copying arrays and for formatting them as Strings
-       in the toString() method.
-       ---------------------------------------------------------------------- */
-
+    
     /**
      * Return a deep copy of the given 2D array.
      */
