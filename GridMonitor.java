@@ -116,6 +116,7 @@ public class GridMonitor implements GridMonitorInterface {
 
         return sb.toString();
     }
+    
     /**
      * For each cell, compute the sum of its 4 neighbors:
      * up, down, left, right. For out-of-bounds neighbors, "mirror"
